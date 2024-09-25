@@ -27,8 +27,6 @@ const closeModal = function () {
 };
 
 btnsOpenModal.forEach(btn => btn.addEventListener('click', openModal));
-// for (let i = 0; i < btnsOpenModal.length; i++)
-//   btnsOpenModal[i].addEventListener('click', openModal);
 
 btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
@@ -70,9 +68,6 @@ const alertH1 = function(e){
 h1.addEventListener('mouseenter',alertH1);
 setTimeout(() => h1.removeEventListener('mouseenter',alertH1),3000);
 
-// h1.onmouseenter = function(e){
-//   alert('onmouseenter: Great! You are reading the heading');
-// };
 
 ///////////////////////////////////////
 // Page Navigation
@@ -147,33 +142,6 @@ nav.addEventListener('mouseout',handleHover.bind(1));
 
 ///////////////////////////////////////
 // Sticky Navigation
-// This method (window.scrollY) is providing a bad performance especially for mobile
-// const initialCoords = section1.getBoundingClientRect();
-// console.log(initialCoords);
-
-// window.addEventListener('scroll', function(){
-//   console.log(this.window.scrollY);
-
-//   if(this.window.scrollY > initialCoords.top)
-//     nav.classList.add('sticky');
-//   else
-//     nav.classList.remove('sticky');
-// });
-
-// Sticky Navigation: Intersection Observer API
-// const obsCallback = function(entries, observer) {
-//   entries.forEach(entry => {
-//     console.log(entry);
-//   })
-// }
-
-// const obsOptions = {
-//   root: null,
-//   threshold: [0, 0.2],
-// };
-
-// const observer = new IntersectionObserver(obsCallback, obsOptions);
-// observer.observe(section1);
 
 const header = document.querySelector('.header');
 
@@ -330,110 +298,3 @@ dotContainer.addEventListener('click', function(e){
 };
 slider();
 
-///////////////////////////////////////
-// LECTURES
-///////////////////////////////////////
-
-// // 1. Selecting
-// console.log(document.documentElement);
-// console.log(document.head);
-// console.log(document.body);
-
-// const header = document.querySelector('.header');
-// document.querySelectorAll('.section');
-
-// document.getElementById('section--1');
-// const allButtons = document.getElementsByTagName('buttons');
-// console.log(allButtons);
-// document.getElementsByClassName('btn');
-
-// // 2. Creating and inserting elements
-// // .insertAdjacentHTML
-
-// const message = document.createElement('div');
-// message.classList.add('cookie-message');
-// // message.textContent = 'We use cookies for improved functionality and analytics.';
-// message.innerHTML = 'We use cookies for improved functionality and analytics <button class="btn btn--close-cookie">Got it!</button>';
-// header.prepend(message);
-// header.append(message);
-// header.append(message.cloneNode(true));
-
-// header.before(message);
-// header.after(message);
-
-// // 3. Delete Elements
-// document.querySelector('.btn--close-cookie').addEventListener('click',function(){
-//   message.remove();
-// })
-
-// // 4. Style
-// message.style.backgroundColor = '#37383d';
-// message.style.width='120%';
-
-// console.log(message.style.color);
-// console.log(message.style.backgroundColor);
-
-// console.log(getComputedStyle(message).color);
-// console.log(getComputedStyle(message).height);
-
-// message.style.height = Number.parseFloat(getComputedStyle(message).height,10) +30 + 'px';
-
-//   // CSS Custom Properties (Variables)
-//   document.documentElement.style.setProperty('--color-primary', 'orangered');
-  
-//   // Attributes
-//   const logo = document.querySelector('.nav__logo');
-//   console.log(logo.alt);
-//   logo.alt = 'Beautiful minimalist logo';
-//   console.log(logo.src);
-//   console.log(logo.className);
-
-//   // console.log(logo.getAttribute());
-//   logo.setAttribute('company','Bankist'); 
-
-//   // Data Attributes
-//   console.log(logo.dataset.versionNumber);
-
-//   // Classes
-//   logo.classList.add('c','j');
-//   logo.classList.remove('c','j');
-//   logo.classList.toggle('c');
-//   logo.classList.contains('c');
-
-// 5. Event Propagation
-// rgb(255,255,255)
-// const randomInt = (min,max) => Math.floor(Math.random() *(max-min+1) + min);
-// const randomColor = () => `rgb(${randomInt(0,255)}, ${randomInt(0,255)}, ${randomInt(0,255)})`; 
-// console.log(randomColor(0,255));
-
-// document.querySelector('.nav__link').addEventListener('click',function(e){
-//  this.style.backgroundColor = randomColor();
-//  console.log('LINK', e.target, e.currentTarget);
-//  console.log(e.currentTarget === this);
-
-// //  Stop propagation
-// // e.stopPropagation();
-// });
-
-// document.querySelector('.nav__links').addEventListener('click',function(e){
-//   this.style.backgroundColor = randomColor();
-//   console.log('CONTAINER', e.target, e.currentTarget);
-// });
-
-// document.querySelector('.nav').addEventListener('click',function(e){
-//   this.style.backgroundColor = randomColor();
-//   console.log('NAV', e.target, e.currentTarget);
-// });
-
-// 6. DOM Traversing
-// const h1 = document.querySelector('h1');
-
-// Going downwards: child
-console.log(h1.querySelectorAll('.highlight'));
-console.log(h1.childNodes);
-console.log(h1.children);
-
-// 7. DOM Content Loaded
-document.addEventListener('DOMContentLoaded',function(e){
-  console.log('HTML parsed and DOM tree built!', e);
-})
