@@ -24,4 +24,4 @@ Technologies Used:
 
 -- JavaScript: Enhanced interactivity and functionality, including animations, tabbed interfaces, and lazy loading.
 
-This project showcases your ability to design a responsive, modern website with clean animations and a focus on performance.
+This project showcases my ability to design a responsive, modern website with clean animations and a focus on performance.
